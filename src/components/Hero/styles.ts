@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Container = styled.section`
   width: 100vw;
-  height: 600px;
+  height: 500px;
   background: black;
   overflow: hidden;
   display: flex;
