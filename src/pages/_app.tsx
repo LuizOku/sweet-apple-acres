@@ -1,27 +1,28 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "@emotion/react";
 import { Roboto } from "@next/font/google";
 
 import { wrapper } from "@/store";
-import GlobalStyle from "@/styles/global.css";
 import theme from "@/styles/theme";
+import { Provider } from "react-redux";
+import "@/styles/globals.css";
 
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
 });
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, ...rest }: AppProps) {
+  const { store, props } = wrapper.useWrappedStore(rest);
   return (
-    <>
-      <GlobalStyle />
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
         <main className={roboto.className}>
-          <Component {...pageProps} />
+          <Component {...props.pageProps} />
         </main>
       </ThemeProvider>
-    </>
+    </Provider>
   );
 }
 
-export default wrapper.withRedux(App);
+export default App;
