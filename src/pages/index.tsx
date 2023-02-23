@@ -1,7 +1,31 @@
+import React from "react";
 import Head from "next/head";
-import { Header, Hero } from "@/components";
+import { Header, Hero, Filter } from "@/components";
+import { getProducts } from "@/api/products";
+import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
 
 export default function Home() {
+  const [products, setProducts] = React.useState<ProductT[]>([]);
+  const [searchParams, setSearchParams] = React.useState<
+    ProductQueryParamsT | undefined
+  >();
+
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await getProducts(searchParams);
+        setProducts(res);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchProducts();
+  }, [searchParams]);
+
+  const handleFilter = (query: ProductQueryParamsT) => {
+    setSearchParams(query);
+  };
+
   return (
     <>
       <Head>
@@ -12,6 +36,7 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
+      <Filter onSearch={(query: ProductQueryParamsT) => handleFilter(query)} />
       <h1> Sweet Apple Acres</h1>
     </>
   );

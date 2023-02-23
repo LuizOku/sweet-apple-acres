@@ -8,3 +8,16 @@ export type ProductT = {
   releated: ProductT[];
   isAvailable: boolean;
 };
+
+export type ProductQueryParamsT = {
+  search?: string;
+  minRating?: number;
+  maxRating?: number;
+  minPrice?: number;
+  maxPrice?: number;
+  isAvailable?: boolean;
+  limit?: number;
+  offset?: number;
+  orderBy?: string;
+  sort?: "DESC" | "ASC";
+};

@@ -1,23 +1,23 @@
 import styled from "@emotion/styled";
 
-type IconButtonStylePropsT = {
+type ButtonStylePropsT = {
   color: string;
   background: string;
+  width?: string;
 };
 
-export const StyledIconButton = styled.button<IconButtonStylePropsT>`
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
-  border-radius: 50%;
+export const StyledButton = styled.button<ButtonStylePropsT>`
+  width: ${({ width }) => width || "100%"};
+  height: 40px;
+  border-radius: 4px;
   border: none;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   color: ${({ color }) => color};
   background-color: ${({ background }) => background};
+  margin: 5px;
+  cursor: pointer;
   &:hover {
     opacity: 0.5;
   }

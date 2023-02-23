@@ -1,3 +1,4 @@
+import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
 
 export const Container = styled.section`
@@ -11,17 +12,19 @@ export const Container = styled.section`
   justify-content: center;
   background-image: url("/crates.png");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 100px 100px 0px 100px;
 `;
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${() => colors.white};
   font-size: 50px;
   margin-top: 10px;
 `;
 
 export const Subtitle = styled.h3`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${() => colors.white};
   font-size: 20px;
   margin-top: 10px;
 `;
