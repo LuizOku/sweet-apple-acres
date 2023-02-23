@@ -5,6 +5,7 @@ type ButtonStylePropsT = {
   background: string;
   width?: string;
   height?: string;
+  disabled?: boolean;
 };
 
 export const StyledButton = styled.button<ButtonStylePropsT>`
@@ -18,8 +19,9 @@ export const StyledButton = styled.button<ButtonStylePropsT>`
   color: ${({ color }) => color};
   background-color: ${({ background }) => background};
   margin: 5px;
-  cursor: pointer;
+  opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   &:hover {
-    opacity: 0.5;
+    opacity: ${({ disabled }) => (disabled ? 0.7 : 0.5)};
   }
 `;

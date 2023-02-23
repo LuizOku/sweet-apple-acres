@@ -1,13 +1,16 @@
-import { ProductT } from "@/shared/types/product.type";
-import { addProductToCart } from "@/store/cartSlice";
-import { colors } from "@/styles/theme";
 import React from "react";
+
+import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
 import {
   IoStar,
   IoCheckmarkCircleOutline,
   IoCloseCircleOutline,
 } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+
+import { ProductT } from "@/shared/types/product.type";
+import { addProductToCart, selectProductsInCart } from "@/store/cartSlice";
+import { colors } from "@/styles/theme";
 import Button from "../Button";
 
 import {
@@ -27,9 +30,15 @@ type CardT = {
 
 const Card = ({ product }: CardT) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const productsInCart = useSelector(selectProductsInCart);
   const dispatch = useDispatch();
   const handleAddToCart = (product: ProductT) => {
     dispatch(addProductToCart(product));
+    toast(`${product.name} added to the cart`, {
+      hideProgressBar: true,
+      autoClose: 2000,
+      type: "success",
+    });
   };
   return (
     <Container
@@ -87,6 +96,9 @@ const Card = ({ product }: CardT) => {
               e.stopPropagation();
               handleAddToCart(product);
             }}
+            disabled={Boolean(
+              productsInCart.find((pric) => pric.id === product.id)
+            )}
           >
             Add to Cart
           </Button>

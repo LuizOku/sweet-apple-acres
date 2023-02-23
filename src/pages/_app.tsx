@@ -1,22 +1,20 @@
 import type { AppProps } from "next/app";
-import { Roboto } from "@next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { wrapper } from "@/store";
 import { Provider } from "react-redux";
 import "@/styles/globals.css";
-
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { Layout } from "@/components";
 
 function App({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest);
   return (
     <Provider store={store}>
-      <main className={roboto.className}>
+      <Layout>
         <Component {...props.pageProps} />
-      </main>
+        <ToastContainer />
+      </Layout>
     </Provider>
   );
 }

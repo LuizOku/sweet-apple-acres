@@ -10,6 +10,7 @@ type ButtonT = {
   children: JSX.Element | string;
   onClick?: (e: React.MouseEvent<Element, MouseEvent>) => void;
   type?: "button" | "submit" | "reset" | undefined;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -20,6 +21,7 @@ const Button = ({
   children,
   onClick = () => {},
   type = "button",
+  disabled = false,
 }: ButtonT) => {
   return (
     <StyledButton
@@ -29,6 +31,7 @@ const Button = ({
       height={height}
       onClick={(e: React.MouseEvent<Element, MouseEvent>) => onClick(e)}
       type={type}
+      disabled={disabled}
     >
       {children}
     </StyledButton>
