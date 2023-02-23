@@ -14,7 +14,7 @@ import {
   CardsContainer,
   CheckoutContainer,
   Total,
-} from "../cart.styles";
+} from "./styles";
 import { Button, CartCard, Input } from "@/components";
 import { colors } from "@/styles/theme";
 import { createOrder } from "@/api/orders";
