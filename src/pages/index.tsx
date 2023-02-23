@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { Header, Hero, Filter, Card } from "@/components";
-import { CardsContainer } from "./styles";
+import { CardsContainer } from "./cart.styles";
 import { getProducts } from "@/api/products";
 import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
 
