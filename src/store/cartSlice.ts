@@ -20,6 +20,14 @@ export const cartSlice = createSlice({
     setProductsInCart(state, action) {
       state.products = action.payload;
     },
+    addProductToCart(state, action) {
+      if (!state.products.find((pr) => pr.id === action.payload.id)) {
+        state.products = [...state.products, action.payload];
+      }
+    },
+    removeProductFromCart(state, action) {
+      state.products = state.products.filter((pr) => pr.id !== action.payload);
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(hydrate, (state, action) => {
@@ -31,7 +39,8 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { setProductsInCart } = cartSlice.actions;
+export const { setProductsInCart, addProductToCart, removeProductFromCart } =
+  cartSlice.actions;
 
 export const selectProductsInCart = (state: AppState) => state.cart.products;
 

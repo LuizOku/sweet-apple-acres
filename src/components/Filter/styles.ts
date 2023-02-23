@@ -8,17 +8,19 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
+export const Form = styled.form`
+  width: 100%;
+`;
+
 export const FilterContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  justify: center;
-  background-color: #ececec;
-  padding: 50px 200px;
+  padding: 50px 250px 0px;
   @media (max-width: 420px) {
-    padding: 50px;
+    padding: 50px 50px 0px;
   }
   section {
     width: 100%;

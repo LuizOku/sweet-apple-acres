@@ -3,6 +3,7 @@ import React from "react";
 import { StyledInput, ErrorSpan } from "./styles";
 
 type InputT = {
+  name: string;
   defaultValue?: string;
   placeholder: string;
   error?: string;
@@ -13,6 +14,7 @@ type InputT = {
 const Input = React.forwardRef<HTMLInputElement, InputT>((props, ref) => (
   <>
     <StyledInput
+      name={props.name}
       type={props.type}
       placeholder={props.placeholder}
       ref={ref}

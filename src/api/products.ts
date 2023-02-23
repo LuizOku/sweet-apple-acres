@@ -5,7 +5,7 @@ import api from "../services";
 
 export const getProducts = (queryParams?: ProductQueryParamsT) =>
   api
-    .get<ProductT[]>("/products", { params: { queryParams } })
+    .get<ProductT[]>("/products", { params: { ...queryParams } })
     .then((response: AxiosResponse) => response.data);
 
 export const getProductById = (productId: string) =>

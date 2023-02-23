@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import { Header, Hero, Filter } from "@/components";
+import { Header, Hero, Filter, Card } from "@/components";
+import { CardsContainer } from "./styles";
 import { getProducts } from "@/api/products";
 import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
 
@@ -37,7 +38,15 @@ export default function Home() {
       <Header />
       <Hero />
       <Filter onSearch={(query: ProductQueryParamsT) => handleFilter(query)} />
-      <h1> Sweet Apple Acres</h1>
+      {products.length > 0 ? (
+        <CardsContainer layout>
+          {products.map((prod) => (
+            <Card key={prod.id} product={prod} />
+          ))}
+        </CardsContainer>
+      ) : (
+        <span>Can&apos;t find that workout :c</span>
+      )}
     </>
   );
 }

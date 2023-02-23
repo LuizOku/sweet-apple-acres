@@ -4,11 +4,12 @@ type ButtonStylePropsT = {
   color: string;
   background: string;
   width?: string;
+  height?: string;
 };
 
 export const StyledButton = styled.button<ButtonStylePropsT>`
   width: ${({ width }) => width || "100%"};
-  height: 40px;
+  height: ${({ height }) => height || "40px"};
   border-radius: 4px;
   border: none;
   display: flex;
