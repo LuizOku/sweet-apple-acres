@@ -10,7 +10,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background-image: url("/crates.png");
+  background-image: url("https://i.imgur.com/wWojP1K.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
