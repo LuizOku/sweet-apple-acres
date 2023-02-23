@@ -14,7 +14,7 @@ export const Container = styled(motion.div)`
 `;
 
 export const Title = styled.h2`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   font-size: 35px;
   margin-bottom: 20px;
   text-align: center;
@@ -31,7 +31,7 @@ export const CardsContainer = styled(motion.div)`
 export const CheckoutContainer = styled.div`
   margin-top: 10px;
   padding: 10px;
-  border-top: ${() => `1px solid ${colors.darkText}`};
+  border-top: ${() => `1px solid ${colors.dark}`};
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -42,7 +42,14 @@ export const CheckoutContainer = styled.div`
 `;
 
 export const Total = styled.h4`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   font-size: 20px;
   margin-right: 5px;
+`;
+
+export const NoResults = styled.h3`
+  color: ${() => colors.primary};
+  font-size: 30px;
+  line-height: 150%;
+  text-align: center;
 `;

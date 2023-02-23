@@ -2,7 +2,7 @@ import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
 
 export const Title = styled.h2`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   font-size: 35px;
   margin-bottom: 20px;
   text-align: center;

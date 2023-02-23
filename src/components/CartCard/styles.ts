@@ -48,13 +48,13 @@ export const Title = styled.h4`
 `;
 
 export const Price = styled(motion.span)`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   text-align: right;
   margin: 15px;
 `;
 
 export const Quantity = styled.span`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   text-align: center;
 `;
 

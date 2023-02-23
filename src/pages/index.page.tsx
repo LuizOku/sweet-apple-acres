@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import { Header, Hero, Filter, Card } from "@/components";
-import { CardsContainer } from "./_styles";
+import Image from "next/image";
+import { Hero, Filter, Card } from "@/components";
+import { CardsContainer, NoResults } from "./_styles";
 import { getProducts } from "@/api/products";
 import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
 
@@ -37,15 +38,16 @@ export default function Home() {
       </Head>
       <Hero />
       <Filter onSearch={(query: ProductQueryParamsT) => handleFilter(query)} />
-      {products.length > 0 ? (
-        <CardsContainer layout>
-          {products.map((prod) => (
-            <Card key={prod.id} product={prod} />
-          ))}
-        </CardsContainer>
-      ) : (
-        <span>Can&apos;t find that product :c</span>
-      )}
+      <CardsContainer layout>
+        {products.length > 0 ? (
+          products.map((prod) => <Card key={prod.id} product={prod} />)
+        ) : (
+          <div>
+            <Image src="/Search.png" alt="Search" width={475} height={360} />
+            <NoResults>No Results found</NoResults>
+          </div>
+        )}
+      </CardsContainer>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 import {
   selectProductsInCart,
@@ -14,6 +15,7 @@ import {
   CardsContainer,
   CheckoutContainer,
   Total,
+  NoResults,
 } from "./_styles";
 import { Button, CartCard, Input } from "@/components";
 import { colors } from "@/styles/theme";
@@ -58,9 +60,14 @@ const Cart = () => {
     <Container layout>
       <Title>Order the Products</Title>
       <CardsContainer layout>
-        {productsInCart.map((pr) => (
-          <CartCard key={pr.id} product={pr} />
-        ))}
+        {productsInCart.length > 0 ? (
+          productsInCart.map((pr) => <CartCard key={pr.id} product={pr} />)
+        ) : (
+          <div>
+            <Image src="/Empty.png" alt="Search" width={475} height={360} />
+            <NoResults>Cart is Empty</NoResults>
+          </div>
+        )}
       </CardsContainer>
       <CheckoutContainer>
         <Total>Total: ${totalPrice.toFixed(2)}</Total>

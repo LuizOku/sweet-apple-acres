@@ -31,7 +31,7 @@ export const Title = styled(motion.h4)`
 `;
 
 export const Description = styled.span`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
 `;
 
 export const AnimatedContainer = styled(motion.div)`
@@ -47,7 +47,7 @@ export const BasicInfo = styled(motion.div)`
 `;
 
 export const Info = styled.span`
-  color: ${() => colors.darkText};
+  color: ${() => colors.dark};
   line-height: 150%;
 `;
 

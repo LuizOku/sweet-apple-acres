@@ -20,21 +20,21 @@ const Footer = ({ testId }: { testId?: string }) => {
       </Link>
       <IconsContainer>
         <IconButton
-          background={colors.darkText}
+          background={colors.dark}
           color={colors.white}
           onClick={() => console.log("instagram")}
         >
           <IoLogoInstagram size={20} />
         </IconButton>
         <IconButton
-          background={colors.darkText}
+          background={colors.dark}
           color={colors.white}
           onClick={() => console.log("facebook")}
         >
           <IoLogoFacebook size={20} />
         </IconButton>
         <IconButton
-          background={colors.darkText}
+          background={colors.dark}
           color={colors.white}
           onClick={() => console.log("linkedin")}
         >
