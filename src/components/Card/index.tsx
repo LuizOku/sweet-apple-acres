@@ -33,7 +33,7 @@ const Card = ({ product }: CardT) => {
   const productsInCart = useSelector(selectProductsInCart);
   const dispatch = useDispatch();
   const handleAddToCart = (product: ProductT) => {
-    dispatch(addProductToCart(product));
+    dispatch(addProductToCart({ ...product, quantity: 1 }));
     toast(`${product.name} added to the cart`, {
       hideProgressBar: true,
       autoClose: 2000,
@@ -46,7 +46,6 @@ const Card = ({ product }: CardT) => {
       transition={{ layout: { duration: 1, type: "spring" } }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      style={{ borderRadius: "4px" }}
       onClick={() => setIsOpen(!isOpen)}
     >
       <CardImage alt="product img" src={product.image} layout />
@@ -62,7 +61,7 @@ const Card = ({ product }: CardT) => {
         </AnimatedContainer>
       )}
       <BasicInfo>
-        <Info>$ {product.price}</Info>
+        <Info>$ {product.price.toFixed(2)}</Info>
         {product.isAvailable ? (
           <IconTextContent>
             <IoCheckmarkCircleOutline style={{ marginRight: "5px" }} />
@@ -96,11 +95,16 @@ const Card = ({ product }: CardT) => {
               e.stopPropagation();
               handleAddToCart(product);
             }}
-            disabled={Boolean(
-              productsInCart.find((pric) => pric.id === product.id)
-            )}
+            disabled={
+              Boolean(productsInCart.find((pric) => pric.id === product.id)) ||
+              !product.isAvailable
+            }
           >
-            Add to Cart
+            {!product.isAvailable
+              ? "Unavailable Product"
+              : Boolean(productsInCart.find((pric) => pric.id === product.id))
+              ? "In Cart"
+              : "Add to Cart"}
           </Button>
         </AnimatedContainer>
       )}

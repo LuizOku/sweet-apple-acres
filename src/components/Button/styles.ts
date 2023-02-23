@@ -17,11 +17,11 @@ export const StyledButton = styled.button<ButtonStylePropsT>`
   align-items: center;
   justify-content: center;
   color: ${({ color }) => color};
-  background-color: ${({ background }) => background};
+  background-color: ${({ background, disabled }) =>
+    disabled ? "#B8B8B8" : background};
   margin: 5px;
-  opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   &:hover {
-    opacity: ${({ disabled }) => (disabled ? 0.7 : 0.5)};
+    opacity: ${({ disabled }) => (disabled ? 1 : 0.5)};
   }
 `;

@@ -10,6 +10,9 @@ export const Container = styled(motion.div)`
   border: 1px solid #ececec;
   width: 300px;
   cursor: pointer;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `;
 
 export const CardImage = styled(motion.img)`

@@ -44,7 +44,7 @@ export default function Home() {
           ))}
         </CardsContainer>
       ) : (
-        <span>Can&apos;t find that workout :c</span>
+        <span>Can&apos;t find that product :c</span>
       )}
     </>
   );
