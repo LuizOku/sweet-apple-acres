@@ -9,6 +9,8 @@ export const CardsContainer = styled(motion.div)`
   align-items: center;
   flex-wrap: wrap;
   padding: 50px 200px;
+  background-color: ${() => colors.white};
+  z-index: 1;
   @media (max-width: 420px) {
     padding: 50px;
   }

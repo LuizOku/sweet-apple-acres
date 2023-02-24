@@ -1,26 +1,31 @@
 import Image from "next/image";
 import React from "react";
 
-import { Container, Title, Subtitle } from "./styles";
+import {
+  Container,
+  Title,
+  Subtitle,
+  TextContainer,
+  ImageContainer,
+} from "./styles";
 
 const Hero = () => {
   return (
     <Container>
-      <Image
-        src="/Crates.png"
-        fill
-        alt="crates"
-        style={{
-          objectFit: "cover",
-          objectPosition: "center",
-          zIndex: 0,
-          backgroundAttachment: "fixed",
-        }}
-      />
-      <section>
+      <ImageContainer>
+        <Image
+          src="/Crates.png"
+          fill
+          alt="crates"
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      </ImageContainer>
+      <TextContainer>
         <Title>Sweet Apple Acres</Title>
         <Subtitle>Here you can bulk order products from anywhere.</Subtitle>
-      </section>
+      </TextContainer>
     </Container>
   );
 };

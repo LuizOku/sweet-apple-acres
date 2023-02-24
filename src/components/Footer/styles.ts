@@ -9,7 +9,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   background-color: ${() => colors.dark};
-  z-index: 100;
+  z-index: 1;
   flex-direction: column;
 `;
 

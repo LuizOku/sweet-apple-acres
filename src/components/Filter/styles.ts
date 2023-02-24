@@ -14,6 +14,8 @@ export const Form = styled.form`
 `;
 
 export const FilterContainer = styled.div`
+  background-color: ${() => colors.white};
+  z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
