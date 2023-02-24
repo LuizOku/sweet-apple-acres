@@ -12,7 +12,7 @@
 
 ## Demo
 > Live demo:
-> [Sweet Apple Acres Workout Live Demo](https://sweet-apple-acres.vercel.app/)
+> [Sweet Apple Acres Live Demo](https://sweet-apple-acres.vercel.app/)
 
 ## How to run
 
