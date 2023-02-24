@@ -85,6 +85,7 @@ const Cart = () => {
             type="submit"
             background={colors.primary}
             color={colors.white}
+            disabled={Boolean(productsInCart.length === 0)}
           >
             Order
           </Button>
