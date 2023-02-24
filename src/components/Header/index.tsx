@@ -8,13 +8,13 @@ import { Container, Title, StyledLink } from "./styles";
 import IconButton from "../IconButton";
 import { colors } from "@/styles/theme";
 
-const Header = ({ testId }: { testId?: string }) => {
+const Header = () => {
   const router = useRouter();
 
   const handleNavigateToCart = () => router.push("/cart");
 
   return (
-    <Container data-testid={testId}>
+    <Container>
       <StyledLink href="/">
         <Image src="/Logo.png" alt="Logo" width={100} height={100} />
         <Title>Sweet Apple Acres</Title>

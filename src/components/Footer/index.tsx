@@ -12,9 +12,9 @@ import { Container, IconsContainer } from "./styles";
 import IconButton from "../IconButton";
 import { colors } from "@/styles/theme";
 
-const Footer = ({ testId }: { testId?: string }) => {
+const Footer = () => {
   return (
-    <Container data-testid={testId}>
+    <Container>
       <Link href="/">
         <Image src="/DarkLogo.png" alt="Logo" width={150} height={150} />
       </Link>
