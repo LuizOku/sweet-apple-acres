@@ -5,5 +5,10 @@ import api from "../services";
 
 export const createOrder = (body: OrderT) =>
   api
-    .post<OrderT[]>("/orders", body)
+    .post<OrderT[]>("/orders", body, {
+      headers: {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
     .then((response: AxiosResponse) => response.data);

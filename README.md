@@ -8,7 +8,7 @@
 
 
 ## Overview
-> Sweet Apple Acres is the resolution for the Wander coding challenge, it contains a full experience of a ecommerce for place bulk orders for produce., with an amazing responsive UI, allowing the users to order products wherever they are
+> Sweet Apple Acres is the resolution for the Wander coding challenge, it contains a full experience of a ecommerce for place bulk orders for produce, with an amazing responsive UI, allowing the users to order products wherever they are
 
 ## Demo
 > Live demo:

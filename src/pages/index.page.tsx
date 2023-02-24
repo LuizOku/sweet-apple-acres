@@ -1,6 +1,9 @@
 import React from "react";
+
 import Head from "next/head";
 import Image from "next/image";
+import { toast } from "react-toastify";
+
 import { Hero, Filter, Card } from "@/components";
 import { CardsContainer, NoResults } from "./_styles";
 import { getProducts } from "@/api/products";
@@ -19,6 +22,11 @@ export default function Home() {
         setProducts(res);
       } catch (error) {
         console.error(error);
+        toast("Error when searching for products", {
+          hideProgressBar: true,
+          autoClose: 2000,
+          type: "error",
+        });
       }
     };
     fetchProducts();

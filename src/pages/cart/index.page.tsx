@@ -53,6 +53,11 @@ const Cart = () => {
       }
     } catch (error) {
       console.error(error);
+      toast("Error when trying to send order", {
+        hideProgressBar: true,
+        autoClose: 2000,
+        type: "error",
+      });
     }
   };
 
