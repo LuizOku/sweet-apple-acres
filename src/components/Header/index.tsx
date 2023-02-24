@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { IoCartOutline } from "react-icons/io5";
 
-import { Container, Title, StyledLink } from "./styles";
-import IconButton from "../IconButton";
 import { colors } from "@/styles/theme";
+import IconButton from "../IconButton";
+import { Container, Title, StyledLink } from "./styles";
 
 const Header = () => {
   const router = useRouter();

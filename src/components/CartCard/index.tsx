@@ -9,6 +9,8 @@ import {
   increaseProductQuantity,
   removeProductFromCart,
 } from "@/store/cartSlice";
+import { IconButton } from "@/components";
+import { colors } from "@/styles/theme";
 import {
   Container,
   CardImage,
@@ -19,8 +21,6 @@ import {
   QuantityContainer,
   Quantity,
 } from "./styles";
-import { IconButton } from "@/components";
-import { colors } from "@/styles/theme";
 
 type CardT = {
   product: ProductT & { quantity: number };

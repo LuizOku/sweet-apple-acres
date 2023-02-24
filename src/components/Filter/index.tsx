@@ -1,9 +1,9 @@
+import React from "react";
+
 import { ProductQueryParamsT } from "@/shared/types/product.type";
 import { colors } from "@/styles/theme";
-import React from "react";
 import Button from "../Button";
 import Input from "../Input";
-
 import { FilterContainer, Title, Form } from "./styles";
 
 type FilterT = {

@@ -1,6 +1,7 @@
-import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
 import Link from "next/link";
+
+import { colors } from "@/styles/theme";
 
 export const Container = styled.header`
   width: 100vw;

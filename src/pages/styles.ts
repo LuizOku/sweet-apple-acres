@@ -1,6 +1,7 @@
-import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+
+import { colors } from "@/styles/theme";
 
 export const CardsContainer = styled(motion.div)`
   display: flex;

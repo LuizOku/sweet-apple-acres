@@ -8,9 +8,9 @@ import {
   IoLogoLinkedin,
 } from "react-icons/io5";
 
-import { Container, IconsContainer } from "./styles";
-import IconButton from "../IconButton";
 import { colors } from "@/styles/theme";
+import IconButton from "../IconButton";
+import { Container, IconsContainer } from "./styles";
 
 const Footer = () => {
   return (

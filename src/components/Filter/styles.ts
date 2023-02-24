@@ -1,5 +1,6 @@
-import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
+
+import { colors } from "@/styles/theme";
 
 export const Title = styled.h2`
   color: ${() => colors.dark};

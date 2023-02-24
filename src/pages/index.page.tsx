@@ -5,9 +5,9 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 
 import { Hero, Filter, Card } from "@/components";
-import { CardsContainer, NoResults } from "./styles";
 import { getProducts } from "@/api/products";
 import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
+import { CardsContainer, NoResults } from "./styles";
 
 export default function Home() {
   const [products, setProducts] = React.useState<ProductT[]>([]);

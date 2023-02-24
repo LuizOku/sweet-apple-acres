@@ -1,5 +1,6 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
+
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { cartSlice } from "./cartSlice";
 
 const makeStore = () =>

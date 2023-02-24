@@ -1,5 +1,6 @@
-import { colors } from "@/styles/theme";
 import styled from "@emotion/styled";
+
+import { colors } from "@/styles/theme";
 
 export const Container = styled.section`
   width: 100vw;

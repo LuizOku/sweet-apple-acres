@@ -1,7 +1,8 @@
-import { createAction, createSlice } from "@reduxjs/toolkit";
-import { AppState } from "./";
 import { HYDRATE } from "next-redux-wrapper";
+
+import { createAction, createSlice } from "@reduxjs/toolkit";
 import { ProductT } from "@/shared/types/product.type";
+import { AppState } from "./";
 
 const hydrate = createAction<AppState>(HYDRATE);
 
