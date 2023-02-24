@@ -31,7 +31,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "test/global-setup.js"
   ],
   "exclude": [
     "node_modules"

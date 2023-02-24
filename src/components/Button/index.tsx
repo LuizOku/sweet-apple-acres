@@ -11,6 +11,7 @@ type ButtonT = {
   onClick?: (e: React.MouseEvent<Element, MouseEvent>) => void;
   type?: "button" | "submit" | "reset" | undefined;
   disabled?: boolean;
+  testId?: string;
 };
 
 const Button = ({
@@ -22,9 +23,11 @@ const Button = ({
   onClick = () => {},
   type = "button",
   disabled = false,
+  testId,
 }: ButtonT) => {
   return (
     <StyledButton
+      data-test-id={testId}
       color={color}
       background={background}
       width={width}

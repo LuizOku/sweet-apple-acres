@@ -15,11 +15,12 @@ const Header = () => {
 
   return (
     <Container>
-      <StyledLink href="/">
+      <StyledLink data-test-id="header-logo-link" href="/">
         <Image src="/Logo.png" alt="Logo" width={100} height={100} />
         <Title>Sweet Apple Acres</Title>
       </StyledLink>
       <IconButton
+        testId="cart-icon-button"
         background={colors.primary}
         color={colors.white}
         onClick={handleNavigateToCart}

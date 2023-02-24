@@ -30,7 +30,7 @@ export const Title = styled(motion.h4)`
   padding: 5px 10px;
 `;
 
-export const Description = styled.span`
+export const Description = styled.p`
   color: ${() => colors.dark};
 `;
 

@@ -27,11 +27,11 @@
 
 ## Tests
 
-> All the tests are located at the path `src/__tests__` and they are all developed using [Playwright](https://playwright.dev/).
+> All the tests are located at the path `./e2e` and they are all developed using [Playwright](https://playwright.dev/).
 >
 > To run all the tests, just run the command:
 > ```
-> yarn test
+> yarn test:e2e
 > ```
 
 ## Main Tech Stack

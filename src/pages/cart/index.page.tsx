@@ -16,7 +16,7 @@ import {
   CheckoutContainer,
   Total,
   NoResults,
-} from "./_styles";
+} from "./styles";
 import { Button, CartCard, Input } from "@/components";
 import { colors } from "@/styles/theme";
 import { createOrder } from "@/api/orders";
@@ -66,7 +66,9 @@ const Cart = () => {
       <Title>Order the Products</Title>
       <CardsContainer layout>
         {productsInCart.length > 0 ? (
-          productsInCart.map((pr) => <CartCard key={pr.id} product={pr} />)
+          productsInCart.map((pr, index) => (
+            <CartCard testId={`cart-card-${index}`} key={pr.id} product={pr} />
+          ))
         ) : (
           <div>
             <Image src="/Empty.png" alt="Search" width={475} height={360} />

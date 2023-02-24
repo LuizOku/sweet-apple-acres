@@ -7,7 +7,7 @@ const Hero = () => {
     <Container>
       <section>
         <Title>Sweet Apple Acres</Title>
-        <Subtitle>Here you can bulk order products from anywhere. </Subtitle>
+        <Subtitle>Here you can bulk order products from anywhere.</Subtitle>
       </section>
     </Container>
   );

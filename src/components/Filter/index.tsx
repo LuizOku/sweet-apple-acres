@@ -42,6 +42,7 @@ const Filter = ({ onSearch }: FilterT) => {
         </section>
         <section>
           <Button
+            testId="filter-button"
             background={colors.primary}
             color={colors.white}
             type="submit"

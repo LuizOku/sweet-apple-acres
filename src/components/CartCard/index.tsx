@@ -24,9 +24,10 @@ import { colors } from "@/styles/theme";
 
 type CardT = {
   product: ProductT & { quantity: number };
+  testId?: string;
 };
 
-const CartCard = ({ product }: CardT) => {
+const CartCard = ({ product, testId }: CardT) => {
   const dispatch = useDispatch();
   const handleIncreaseQuantitiy = () => {
     dispatch(increaseProductQuantity(product.id));
@@ -42,6 +43,7 @@ const CartCard = ({ product }: CardT) => {
 
   return (
     <Container
+      data-test-id={testId}
       layout
       transition={{ layout: { duration: 1 } }}
       initial={{ opacity: 0 }}
@@ -55,6 +57,7 @@ const CartCard = ({ product }: CardT) => {
             background={colors.white}
             color={colors.secondary}
             onClick={handleRemoveProduct}
+            testId={`${testId}-remove`}
           >
             <IoTrash size={20} />
           </IconButton>
@@ -65,14 +68,18 @@ const CartCard = ({ product }: CardT) => {
               background={colors.white}
               color={colors.secondary}
               onClick={handleDecreaseQuantitiy}
+              testId={`${testId}-decrease`}
             >
               <IoRemove />
             </IconButton>
-            <Quantity>{product.quantity}</Quantity>
+            <Quantity data-test-id={`${testId}-quantity`}>
+              {product.quantity}
+            </Quantity>
             <IconButton
               background={colors.white}
               color={colors.primary}
               onClick={handleIncreaseQuantitiy}
+              testId={`${testId}-increase`}
             >
               <IoAdd />
             </IconButton>

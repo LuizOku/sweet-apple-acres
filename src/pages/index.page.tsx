@@ -5,7 +5,7 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 
 import { Hero, Filter, Card } from "@/components";
-import { CardsContainer, NoResults } from "./_styles";
+import { CardsContainer, NoResults } from "./styles";
 import { getProducts } from "@/api/products";
 import { ProductT, ProductQueryParamsT } from "@/shared/types/product.type";
 
@@ -48,7 +48,13 @@ export default function Home() {
       <Filter onSearch={(query: ProductQueryParamsT) => handleFilter(query)} />
       <CardsContainer layout>
         {products.length > 0 ? (
-          products.map((prod) => <Card key={prod.id} product={prod} />)
+          products.map((prod, index) => (
+            <Card
+              testId={`product-card-${index}`}
+              key={prod.id}
+              product={prod}
+            />
+          ))
         ) : (
           <div>
             <Image src="/Search.png" alt="Search" width={475} height={360} />

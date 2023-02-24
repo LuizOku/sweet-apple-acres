@@ -26,9 +26,10 @@ import {
 
 type CardT = {
   product: ProductT;
+  testId?: string;
 };
 
-const Card = ({ product }: CardT) => {
+const Card = ({ product, testId }: CardT) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const productsInCart = useSelector(selectProductsInCart);
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const Card = ({ product }: CardT) => {
   };
   return (
     <Container
+      data-test-id={testId}
       layout
       transition={{ layout: { duration: 1, type: "spring" } }}
       initial={{ opacity: 0 }}
@@ -52,6 +54,7 @@ const Card = ({ product }: CardT) => {
       <Title>{product.name}</Title>
       {isOpen && (
         <AnimatedContainer
+          data-test-id={`${testId}-description`}
           layout
           transition={{ layout: { duration: 1 } }}
           initial={{ opacity: 0 }}

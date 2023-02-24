@@ -7,11 +7,23 @@ type IconButtonT = {
   background: string;
   children: JSX.Element;
   onClick: () => void;
+  testId?: string;
 };
 
-const IconButton = ({ color, background, children, onClick }: IconButtonT) => {
+const IconButton = ({
+  color,
+  background,
+  children,
+  onClick,
+  testId,
+}: IconButtonT) => {
   return (
-    <StyledIconButton color={color} background={background} onClick={onClick}>
+    <StyledIconButton
+      data-test-id={testId}
+      color={color}
+      background={background}
+      onClick={onClick}
+    >
       {children}
     </StyledIconButton>
   );

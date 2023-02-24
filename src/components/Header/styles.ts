@@ -22,7 +22,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h4`
   color: ${() => colors.secondary};
   font-size: 18px;
   text-transform: uppercase;
