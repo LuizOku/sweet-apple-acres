@@ -33,3 +33,9 @@
 > ```
 > yarn test
 > ```
+
+## Main Tech Stack
+
+> * React JS;
+> * Next JS:
+> * TypeScript:
