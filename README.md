@@ -20,7 +20,8 @@
 > * Run the commands below on your cmd:
 > ```
 > yarn install
-> yarn dev
+> yarn build
+> yarn start
 > ```
 > * You can find the project running on `localhost:3000`.
 
