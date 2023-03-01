@@ -38,3 +38,14 @@ test("should increase and decrease the quantity of a product", async ({
     page.locator("css=[data-test-id='cart-card-0-quantity']")
   ).toContainText("1");
 });
+
+test("should navigate to the cart without any products added and the form should be hidden", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.click("css=[data-test-id='cart-icon-button']");
+  await expect(page).toHaveURL("/cart");
+  await expect(
+    page.locator("css=[data-test-id='checkout-form']")
+  ).not.toBeVisible();
+});

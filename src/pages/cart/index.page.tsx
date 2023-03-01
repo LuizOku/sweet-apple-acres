@@ -19,8 +19,8 @@ import {
 } from "./styles";
 import { Button, CartCard, Input } from "@/components";
 import { colors } from "@/styles/theme";
-import { createOrder } from "@/api/orders";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 const Cart = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const Cart = () => {
       items,
     };
     try {
-      const res = await createOrder(obj);
+      const res = await axios.post("/api/orders", obj);
       if (res) {
         router.push("/");
         toast("Order sent successfully", {
@@ -78,18 +78,24 @@ const Cart = () => {
       </CardsContainer>
       <CheckoutContainer>
         <Total>Total: ${totalPrice.toFixed(2)}</Total>
-        <form ref={formRef} onSubmit={(e) => handleOrder(e)}>
-          <Input name="myName" placeholder="Name" />
-          <Input name="deliveryAddress" placeholder="Address" />
-          <Button
-            type="submit"
-            background={colors.primary}
-            color={colors.white}
-            disabled={Boolean(productsInCart.length === 0)}
+        {productsInCart.length > 0 && (
+          <form
+            ref={formRef}
+            onSubmit={(e) => handleOrder(e)}
+            data-test-id="checkout-form"
           >
-            Order
-          </Button>
-        </form>
+            <Input name="myName" placeholder="Name" />
+            <Input name="deliveryAddress" placeholder="Address" />
+            <Button
+              type="submit"
+              background={colors.primary}
+              color={colors.white}
+              disabled={Boolean(productsInCart.length === 0)}
+            >
+              Order
+            </Button>
+          </form>
+        )}
       </CheckoutContainer>
     </Container>
   );

@@ -8,6 +8,7 @@ const config: PlaywrightTestConfig = {
   testDir: path.join(__dirname, "e2e"),
   retries: 1,
   outputDir: "test-results/",
+  fullyParallel: true,
   webServer: {
     command: "npm run dev",
     url: baseURL,
